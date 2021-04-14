@@ -14,15 +14,20 @@
 # git clone https://github.com/zhengyb1/install-k8s
 # cd install-k8s
 ```
+### 3、创建/app目录  
+
+```
+# mkdir /app  
+```
 
 下载准备好软件包（包含所有涉及文件和镜像，比较大），解压到/app目录：
 
-云盘链接：https://pan.baidu.com/s/1uCLylsj1-W2HigS_Tn9b5g 
-提取码：bicc 
+云盘链接：https://pan.baidu.com/s/1VLzujLyFDXzxFz7Kj9av8g  
+提取码：dca3  
 ```
-# tar zxf software.tar
+# tar zxf software.tar  
 ```
-### 3、修改Ansible文件
+### 4、修改Ansible文件  
 
 修改hosts文件，根据规划修改对应IP和名称。
 
@@ -40,14 +45,14 @@ cert_hosts:
   k8s:
   etcd:
 ```
-## 4、一键部署
-### 4.1 架构图
+## 5、一键部署
+### 5.1 架构图
 单Master架构
 ![avatar](https://github.com/zhengyb1/install-k8s/blob/master/single-master.jpg)
 
 多Master架构
 ![avatar](https://github.com/zhengyb1/install-k8s/blob/master/multi-master.jpg)
-### 4.2 部署命令
+### 5.2 部署命令
 单Master版：
 ```
 # ansible-playbook -i hosts single-master-deploy.yml -uroot -k
@@ -57,7 +62,7 @@ cert_hosts:
 # ansible-playbook -i hosts multi-master-deploy.yml -uroot -k
 ```
 
-## 5、查看集群节点
+## 6、查看集群节点
 ```
 # kubectl get node
 NAME          STATUS   ROLES    AGE   VERSION
@@ -66,8 +71,8 @@ k8s-node1     Ready    <none>   9h    v1.20.4
 k8s-node2     Ready    <none>   9h    v1.20.4
 ```
 
-## 6、其他
-### 6.1 部署控制
+## 7、其他
+### 7.1 部署控制
 如果安装某个阶段失败，可针对性测试.
 
 例如：只运行部署插件
@@ -75,19 +80,19 @@ k8s-node2     Ready    <none>   9h    v1.20.4
 # ansible-playbook -i hosts single-master-deploy.yml -uroot -k --tags addons
 ```
 
-### 6.2 节点扩容
+### 7.2 节点扩容
 1）修改hosts，添加新节点ip
 ```
 # vi hosts
 ...
 [newnode]
-192.168.31.75 node_name=k8s-node3
+192.168.137.75 node_name=k8s-node3
 ```
 2）执行部署
 ```
 # ansible-playbook -i hosts add-node.yml -uroot -k
 ```
-### 6.3 所有HTTPS证书存放路径
+### 7.3 所有HTTPS证书存放路径
 部署产生的证书都会存放到目录“ansible-install-k8s-master/ssl”，一定要保存好，后面还会用到~
 
 <br/>
