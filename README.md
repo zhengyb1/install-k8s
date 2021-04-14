@@ -11,7 +11,7 @@
 下载Ansible部署文件：
 
 ```
-# git clone https://github.com/0hades0/install-k8s
+# git clone https://github.com/zhengyb1/install-k8s
 # cd install-k8s
 ```
 
@@ -43,10 +43,10 @@ cert_hosts:
 ## 4、一键部署
 ### 4.1 架构图
 单Master架构
-![avatar](https://github.com/0hades0/install-k8s/blob/master/single-master.jpg)
+![avatar](https://github.com/zhengyb1/install-k8s/blob/master/single-master.jpg)
 
 多Master架构
-![avatar](https://github.com/0hades0/install-k8s/blob/master/multi-master.jpg)
+![avatar](https://github.com/zhengyb1/install-k8s/blob/master/multi-master.jpg)
 ### 4.2 部署命令
 单Master版：
 ```
