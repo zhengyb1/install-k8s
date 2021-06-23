@@ -5,7 +5,7 @@ etcd_work_dir: '/opt/etcd'
 tmp_dir: '/app/k8s'
 
 # harbor地址
-harbor_address: 'harbor.zhixueyun.com:5000'    # 填写自己的harbor地址，也可以是IP地址
+harbor_address: 'harbor.yixingyuntech.com:5000'    # 填写自己的harbor地址，也可以是IP地址
 
 # 集群网络
 service_cidr: '10.0.0.0/24'
